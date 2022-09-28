@@ -1,0 +1,174 @@
+<div class="card-body blog-form">
+    <h5>{{pageTitle}}</h5>
+    <form [formGroup]="datForm" (ngSubmit)="onSubmit(datForm)" class="form-horizontal form-material">
+        <div class="form-group">
+            <label for="title">Pais</label>
+            <select formControlName="pais_code" class="form-control">
+            <option *ngFor="let pais of countries" value="{{pais.code}}">
+              {{pais.title}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group form-row">
+            <label class="col-md-12">Num. Victimas pais actual <span class="required">*</span></label>
+            <div class="col-md-9">
+                <input type="text" formControlName="numDatosvictimas" class="form-control" required>
+                <div *ngIf="numDatosvictimas.invalid && (numDatosvictimas.dirty || numDatosvictimas.touched)" class="error">
+                    <div *ngIf="numDatosvictimas.errors">
+                        Contenido es Requerido.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <label class="col-md-12">Num. Victimas pais actual <span class="required">*</span></label>
+            <div class="col-md-9">
+                <input type="text" formControlName="numDatosvictimas" class="form-control" required>
+                <div *ngIf="numDatosvictimas.invalid && (numDatosvictimas.dirty || numDatosvictimas.touched)" class="error">
+                    <div *ngIf="numDatosvictimas.errors">
+                        Contenido es Requerido.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Género de las víctimas</h2>
+        <div class="form-row">
+            <div class="form-group col-xs-12 col-sm-6">
+                <label>Hombres </label>
+                <div class="col-md-12">
+                    <input type="text" formControlName="generoVictimasHombre" class="form-control" required>
+                    <div *ngIf="generoVictimasHombre.invalid && (generoVictimasHombre.dirty || generoVictimasHombre.touched)" class="error">
+                        <div *ngIf="generoVictimasHombre.errors">
+                            Contenido es Requerido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label>Mujeres </label>
+                <div class="col-md-12">
+                    <input type="text" formControlName="generoVictimasMujer" class="form-control" required>
+                    <div *ngIf="generoVictimasMujer.invalid && (generoVictimasMujer.dirty || generoVictimasMujer.touched)" class="error">
+                        <div *ngIf="generoVictimasMujer.errors">
+                            Contenido es Requerido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2>Edad de las víctimas</h2>
+        <div class="form-row">
+            <div class="form-group col-xs-12 col-sm-6">
+                <label>Niños </label>
+                <div class="col-md-12">
+                    <input type="text" formControlName="edadVictimaNino" class="form-control" required>
+                    <div *ngIf="edadVictimaNino.invalid && (edadVictimaNino.dirty || edadVictimaNino.touched)" class="error">
+                        <div *ngIf="edadVictimaNino.errors">
+                            Contenido es Requerido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label>Jovenes </label>
+                <div class="col-md-12">
+                    <input type="text" formControlName="edadVictimaJoven" class="form-control" required>
+                    <div *ngIf="edadVictimaJoven.invalid && (edadVictimaJoven.dirty || edadVictimaJoven.touched)" class="error">
+                        <div *ngIf="edadVictimaJoven.errors">
+                            Contenido es Requerido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label>Adultos </label>
+                <div class="col-md-12">
+                    <input type="text" formControlName="edadVictimaAdulto" class="form-control" required>
+                    <div *ngIf="edadVictimaAdulto.invalid && (edadVictimaAdulto.dirty || edadVictimaAdulto.touched)" class="error">
+                        <div *ngIf="edadVictimaAdulto.errors">
+                            Contenido es Requerido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label>Ancianos </label>
+                <div class="col-md-12">
+                    <input type="text" formControlName="edadVictimaOld" class="form-control" required>
+                    <div *ngIf="edadVictimaOld.invalid && (edadVictimaOld.dirty || edadVictimaOld.touched)" class="error">
+                        <div *ngIf="edadVictimaOld.errors">
+                            Contenido es Requerido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2>Estatus Migratorio</h2>
+        <div class="form-row">
+            <div class="form-group col-xs-12 col-sm-6">
+                <label>Regulares </label>
+                <div class="col-md-12">
+                    <input type="text" formControlName="estatusMigratorioRegular" class="form-control" required>
+                    <div *ngIf="estatusMigratorioRegular.invalid && (estatusMigratorioRegular.dirty || estatusMigratorioRegular.touched)" class="error">
+                        <div *ngIf="estatusMigratorioRegular.errors">
+                            Contenido es Requerido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label>Irregulares </label>
+                <div class="col-md-12">
+                    <input type="text" formControlName="estatusMigratorioIrregular" class="form-control" required>
+                    <div *ngIf="estatusMigratorioIrregular.invalid && (estatusMigratorioIrregular.dirty || estatusMigratorioIrregular.touched)" class="error">
+                        <div *ngIf="estatusMigratorioIrregular.errors">
+                            Contenido es Requerido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group form-row">
+            <label class="col-md-3">Estatus de Consulado <span class="required">*</span></label>
+            <div class="col-md-9">
+                <ckeditor [(data)]="editorData" formControlName="estatusConsulado" rows="5" class="form-control" required> </ckeditor>
+                <div *ngIf="estatusConsulado.invalid && (estatusConsulado.dirty || estatusConsulado.touched)" class="error">
+                    <div *ngIf="estatusConsulado.errors">
+                        Contenido es Requerido.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <label class="col-md-12">Estado de la integridad <span class="required">*</span></label>
+            <div class="col-md-9">
+                <input type="text" formControlName="estadoIntegridad" class="form-control" required>
+                <div *ngIf="estadoIntegridad.invalid && (estadoIntegridad.dirty || estadoIntegridad.touched)" class="error">
+                    <div *ngIf="estadoIntegridad.errors">
+                        Contenido es Requerido.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <label class="col-md-3"></label>
+            <div class="col-md-9">
+                <input type="hidden" formControlName="id">
+                <button type="submit" [disabled]="!datForm.valid" class="btn btn-outline-success">Guardar</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+<div class="d-block mt-3 text-danger">
+    {{error}}
+</div>

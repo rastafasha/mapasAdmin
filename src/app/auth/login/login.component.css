@@ -1,0 +1,26 @@
+.bg-login {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9e7746+0,f3c17d+50,9e7746+100 */
+    background: #9e7746;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #9e7746 0%, #9e7746 40%, #f3c17d 50%, #9e7746 60%, #9e7746 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #9e7746 0%, #9e7746 40%, #f3c17d 50%, #9e7746 60%, #9e7746 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #9e7746 0%, #9e7746 40%, #f3c17d 50%, #9e7746 60%, #9e7746 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#9e7746', endColorstr='#9e7746', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    height: 100vh;
+}
+
+.password-form {
+    background: #fff;
+    font-size: .9rem;
+    padding: 3.8rem 3rem;
+    display: block;
+    width: 400px;
+    max-width: 400px;
+    border-radius: 4px;
+    box-shadow: 0 8px 10px -5px rgba(0, 0, 0, .2), 0 15px 25px 2px rgba(0, 0, 0, .14), 0 5px 30px 5px rgba(0, 0, 0, .12);
+    z-index: 2;
+}

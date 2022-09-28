@@ -1,0 +1,141 @@
+<div class="row page-titles">
+    <div class="col-12 animated fadeInLeft">
+        <div class="card cardtop">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-10 align-self-center">
+                        <h3 class="text-themecolor">{{pageTitle}}</h3>
+                    </div>
+                    <div class="col-12 col-sm-2">
+                        <button class="btn btn-outline-danger" href="javascript:void(0)" (click)="goBack()">Volver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="accordion" id="accordionExample">
+    <!--informacion basica-->
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Información Básica
+        </button>
+            </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="card">
+                    <div class="card-body blog-form">
+                        <form [formGroup]="paisForm" (ngSubmit)="onSubmit(paisForm)" class="form-horizontal form-material">
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Título </label>
+                                <div class="col-md-9">
+                                    <input type="text" formControlName="title" class="form-control" placeholder="Title">
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Código </label>
+                                <div class="col-md-9">
+
+                                    <select formControlName="code" class="form-control">
+                                      <option *ngFor="let pais of countries" value="{{pais.code}}">
+                                        {{pais.title}}
+                                      </option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Activo</label>
+                                <div class="col-md-9">
+                                    <input type="radio" formControlName="isActive" value="isVisible" /> Yes
+                                    <input type="radio" formControlName="isActive" value="noVisible" /> No
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Información</label>
+                                <div class="col-md-9">
+                                    <ckeditor [(data)]="editorData" formControlName="informacion" rows="5" class="form-control" placeholder="Direccion"> </ckeditor>
+
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Ciudades</label>
+                                <div class="col-md-9">
+                                    <ckeditor [(data)]="editorDatac" formControlName="ciudades" rows="5" class="form-control" placeholder="ciudades"> </ckeditor>
+
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <input type="hidden" formControlName="id">
+                                    <button type="submit" [disabled]="!paisForm.valid" class="btn btn-outline-success">Guardar</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Datos Violaciones-->
+    <div class="card">
+        <div class="card-header" id="datos">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Datos Victimas
+        </button>
+            </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <app-datos-victimas></app-datos-victimas>
+            </div>
+        </div>
+    </div>
+    <!--crimenes lh-->
+    <div class="card">
+        <div class="card-header" id="crimenes">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Crímenes LH
+        </button>
+            </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="crimenes" data-parent="#accordionExample">
+            <div class="card-body">
+                <app-crimene-lh></app-crimene-lh>
+            </div>
+        </div>
+    </div>
+    <!--crimenes lh-->
+    <div class="card">
+        <div class="card-header" id="violaciones">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        Violaciones DDHH
+      </button>
+            </h2>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="violaciones" data-parent="#accordionExample">
+            <div class="card-body">
+                <app-violaciones-ddhh></app-violaciones-ddhh>
+            </div>
+        </div>
+    </div>
+</div>
